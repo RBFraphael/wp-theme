@@ -25,7 +25,7 @@ inquirer.prompt([
     {
         type: "input",
         name: "class_prefix",
-        message: "Class prefix (e.g. \"WpBeautifulTheme\")",
+        message: "Main class (e.g. \"WpBeautifulTheme\")",
         filter: (val) => pascalCase(val.trim()),
         validate: (val) => val.length !== 0
     },
@@ -38,8 +38,15 @@ inquirer.prompt([
     },
     {
         type: "input",
+        name: "func_prefix",
+        message: "Function prefix (e.g. \"wpbeautifultheme\")",
+        filter: (val) => paramCase(val.trim()),
+        validate: (val) => val.length !== 0
+    },
+    {
+        type: "input",
         name: "text_domain",
-        message: "Text domain prefix (e.g. \"wp-beautiful-theme\")",
+        message: "Text domain (e.g. \"wp-beautiful-theme\")",
         filter: (val) => paramCase(val.trim()),
         validate: (val) => val.length !== 0
     },
@@ -70,19 +77,21 @@ inquirer.prompt([
         'An easy to use and easy to understand Wordpress starter theme': answers.project_description,
         'StarterTheme': answers.class_prefix,
         'STARTERTHEME': answers.const_prefix,
+        'startertheme': answers.func_prefix,
         'starter-theme': answers.text_domain,
         'RBFraphael': answers.author,
         'https://github.com/rbfraphael': answers.author_url,
-        'https://github.com/rbfraphael/rbf-wp-starter-theme': answers.git_repository
+        'https://github.com/rbfraphael/starter-theme': answers.git_repository
     };
 
     log("");
     log("Enqueued changes:");
     log("---------------------------");
-    log(`- ${chalk.redBright("RBF Wordpress Starter Theme")} => ${chalk.greenBright(answers.project_name)}`);
-    log(`- ${chalk.redBright("RBFWpStarterTheme")} => ${chalk.green(answers.class_prefix)}`);
-    log(`- ${chalk.redBright("RBFWPSTARTERTHEME")} => ${chalk.green(answers.const_prefix)}`);
-    log(`- ${chalk.redBright("rbf-wp-starter-theme")} => ${chalk.green(answers.text_domain)}`);
+    log(`- ${chalk.redBright("Starter Theme")} => ${chalk.greenBright(answers.project_name)}`);
+    log(`- ${chalk.redBright("StarterTheme")} => ${chalk.green(answers.class_prefix)}`);
+    log(`- ${chalk.redBright("STARTERTHEME")} => ${chalk.green(answers.const_prefix)}`);
+    log(`- ${chalk.redBright("startertheme")} => ${chalk.green(answers.func_prefix)}`);
+    log(`- ${chalk.redBright("starter-theme")} => ${chalk.green(answers.text_domain)}`);
     log("---------------------------");
     log("");
     log("Project info:");
