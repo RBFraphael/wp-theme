@@ -1,0 +1,55 @@
+{
+  "name": "starter-theme",
+  "version": "1.0.0",
+  "description": "An easy to use and easy to understand Wordpress starter theme",
+  "main": "index.js",
+  "scripts": {
+    "css": "gulp css",
+    "fonts": "gulp fonts",
+    "img": "gulp img",
+    "js": "gulp js",
+    "build": "gulp build",
+    "watch": "gulp watch",
+    "dev": "gulp default",
+    "zip": "node build/release.js",
+    "dist": "run-s build zip",
+    "rebrand": "node build/rebrand.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rbfraphael/starter-theme"
+  },
+  "keywords": [
+    "wordpress",
+    "theme",
+    "starter"
+  ],
+  "author": "RBFraphael",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/rbfraphael/starter-theme/issues"
+  },
+  "homepage": "https://github.com/rbfraphael/starter-theme#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.16.11",
+    "archiver": "^5.3.0",
+    "babelify": "^10.0.0",
+    "browserify": "^17.0.0",
+    "chalk": "^4.1.2",
+    "change-case": "^4.1.2",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-sass": "^5.1.0",
+    "inquirer": "^8.2.0",
+    "node-sass": "^7.0.1",
+    "npm-run-all": "^4.1.5",
+    "remove": "^0.1.5",
+    "replace-in-file": "^6.3.2",
+    "shelljs": "^0.8.5",
+    "vinyl-source-stream": "^2.0.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.1.3"
+  }
+}
