@@ -1,11 +1,7 @@
 /vendor/
 /node_modules/
 
-/assets/dist/css/*
-/assets/dist/fonts/*
-/assets/dist/img/*
-/assets/dist/js/*
-/assets/dist/webfonts/*
+/assets/dist/
 
 package-lock.json
-composer-lock.json
+composer.lock
