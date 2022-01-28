@@ -27,7 +27,9 @@ gulp.task("css:purge", () => {
         .pipe(purgecss({
             content: [
                 "./*.php",
-                "./templates/**/*.php"
+                "./templates/**/*.php",
+                "./includes/classes/**/*.php",
+                "./includes/helpers/**/*.php"
             ]
         }))
         .pipe(rename({
