@@ -95,6 +95,6 @@ class Provider_Filters
 
     public function acf_settings_url($url)
     {
-        return STARTERTHEME_URL."/includes/plugins/advanced-custom-fields";
+        return STARTERTHEME_URL."/includes/plugins/advanced-custom-fields/";
     }
 }
