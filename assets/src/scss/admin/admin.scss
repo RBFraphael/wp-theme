@@ -1,9 +1,7 @@
 @import "./bootstrap";
 
-@import "../third-party/fontawesome-5.15.4/fontawesome";
-@import "../third-party/slick-1.8.0/slick";
-@import "../third-party/slick-1.8.0/slick-theme";
-
-@import "../third-party/animate";
-@import "../third-party/aos";
-@import "../third-party/wickedcss";
+@import "../../../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
+@import "../../../../node_modules/slick-carousel/slick/slick.scss";
+@import "../../../../node_modules/slick-carousel/slick/slick-theme.scss";
+@import "../../../../node_modules/animate.css/animate";
+@import "../../../../node_modules/aos/src/sass/aos";
