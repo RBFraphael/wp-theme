@@ -1,5 +1,4 @@
 const gulp = require('gulp');
-const babel = require('gulp-babel');
 const sass = require('gulp-sass')(require('node-sass'));
 const imagemin = require('gulp-imagemin');
 const browserify = require('browserify');
@@ -23,13 +22,14 @@ gulp.task("css:build", () => {
 });
 
 gulp.task("css:purge", () => {
-    return gulp.src("./assets/dist/css/*.css")
+    return gulp.src(["./assets/dist/css/*.css", "!./assets/dist/css/*.min.css"])
         .pipe(purgecss({
             content: [
                 "./*.php",
                 "./templates/**/*.php",
                 "./includes/classes/**/*.php",
-                "./includes/helpers/**/*.php"
+                "./includes/helpers/**/*.php",
+                "./assets/dist/js/*.js"
             ]
         }))
         .pipe(rename({
@@ -38,8 +38,18 @@ gulp.task("css:purge", () => {
         .pipe(gulp.dest("./assets/dist/css"));
 });
 
-gulp.task("css:watch", () => {
-    return gulp.watch("./assets/src/scss/**/*.scss", gulp.series("css:build", "css:purge"));
+gulp.task("css:watch", (done) => {
+    gulp.watch("./assets/src/scss/**/*.scss", gulp.series("css:build", "css:purge"));
+
+    gulp.watch([
+        "./*.php",
+        "./templates/**/*.php",
+        "./includes/classes/**/*.php",
+        "./includes/helpers/**/*.php",
+        "./assets/dist/js/*.js"
+    ], gulp.series("css:purge"));
+
+    done();
 });
 
 gulp.task("css", gulp.series("css:build", "css:purge"));
