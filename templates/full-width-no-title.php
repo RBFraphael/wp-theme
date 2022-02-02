@@ -4,7 +4,7 @@
 
 <?php while(have_posts()): the_post(); ?>
 
-<div class="container-fluid">
+<div class="container-fluid p-0">
     <div class="row">
         <div class="col-12">
             <?php the_content(); ?>
