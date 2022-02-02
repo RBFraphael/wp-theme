@@ -103,4 +103,13 @@ class Provider_Filters
         $args['name'] = str_replace("acf/", "starter-theme/", $args['name']);
         return $args;
     }
+
+    public function use_block_editor_for_post_type($status, $post_type)
+    {
+        if($post_type == "post"){
+            return false;
+        }
+
+        return $status;
+    }
 }
