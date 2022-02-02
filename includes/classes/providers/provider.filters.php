@@ -97,4 +97,10 @@ class Provider_Filters
     {
         return STARTERTHEME_URL."/includes/plugins/advanced-custom-fields/";
     }
+
+    public function acf_register_block_type_args($args)
+    {
+        $args['name'] = str_replace("acf/", "starter-theme/", $args['name']);
+        return $args;
+    }
 }

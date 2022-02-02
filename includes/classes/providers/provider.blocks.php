@@ -6,12 +6,14 @@ class Provider_Blocks
     {
         $this->callbacks = new Callbacks_Blocks();
         $this->fields = new Provider_Fields();
+
+        $this->container();
     }
 
     public function container()
     {
         startertheme_register_block([
-            'name' => "starter-theme-container",
+            'name' => "container",
             'title' => __("Container", "starter-theme"),
             'description' => __("Container", "starter-theme"),
             'category' => "starter-theme",

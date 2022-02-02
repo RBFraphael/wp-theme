@@ -65,7 +65,7 @@ class Provider_Fields
         $fields
             ->addTrueFalse("px", ['label' => __("Enable H padding", "starter-theme")])
             ->addTrueFalse("py", ['label' => __("Enable V padding?", "starter-theme")])
-            ->setLocation("block", "==", "acf/starter-theme-container");
+            ->setLocation("block", "==", "starter-theme/container");
 
         startertheme_register_fields($fields);
     }

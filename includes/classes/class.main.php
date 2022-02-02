@@ -53,6 +53,7 @@ class StarterTheme
         // Advanced Custom Fields filters
         add_filter("acf/settings/url", [$filters, "acf_settings_url"]);
         add_filter("acf/settings/show_admin", "__return_false");
+        add_filter("acf/register_block_type_args", [$filters, "acf_register_block_type_args"]);
 
         // Custom filters
         add_filter("desktop_menu_filter", [$custom_filters, "desktop_menu"]);
