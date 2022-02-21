@@ -8,9 +8,10 @@
     <?php wp_head(); ?>
     <?php do_action("custom_code_head_close"); ?>
 </head>
-<body <?php body_class(); ?>>
-<?php do_action("custom_code_body_open"); ?>
+<?php $enable_barba = get_field("enable_barba", "options"); ?>
+<body <?php body_class(); ?> <?php if($enable_barba): ?> data-barba="wrapper" <?php endif; ?>>
 
+<?php do_action("custom_code_body_open"); ?>
 <?php get_template_part("templates/partials/site-header"); ?>
 
-<main>
+<main <?php if($enable_barba): ?> data-barba="container" data-barba-namespace="startertheme" <?php endif; ?>>

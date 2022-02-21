@@ -1,4 +1,5 @@
-<?php get_template_part("views/partials/drawer"); ?>
+<?php get_template_part("templates/partials/drawer"); ?>
+<?php get_template_part("templates/partials/loader"); ?>
 
 <header id="site-header">
     <div class="container-fluid py-3">

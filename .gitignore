@@ -1,7 +1,7 @@
+# I recommend you to comment the next lines when your theme is ready to deploy
 /vendor/
-/node_modules/
-
 /assets/dist/
 
+/node_modules/
 package-lock.json
 composer.lock

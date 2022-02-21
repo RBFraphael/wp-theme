@@ -66,6 +66,9 @@ gulp.task("js:build", (done) => {
             presets: ['@babel/preset-env']
         }))
         .bundle()
+        .on("error", (e) => {
+            console.error(e.message);
+        })
         .pipe(source("theme.js"))
         .pipe(gulp.dest("./assets/dist/js"));
 
@@ -74,6 +77,9 @@ gulp.task("js:build", (done) => {
             presets: ['@babel/preset-env']
         }))
         .bundle()
+        .on("error", (e) => {
+            console.error(e.message);
+        })
         .pipe(source("admin.js"))
         .pipe(gulp.dest("./assets/dist/js"));
 

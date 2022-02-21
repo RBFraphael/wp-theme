@@ -2,41 +2,41 @@
 
 use \StoutLogic\AcfBuilder\FieldsBuilder;
 
-function startertheme_render_block($template, $fields = [], $return = false)
+function startertheme_render_block($t, $f = [], $r = false)
 {
-    foreach($fields as $key => $value){
-        $$key = $value;
+    foreach($f as $k => $v){
+        $$k = $v;
     }
 
-    $__template_file = STARTERTHEME_PATH."/templates/blocks/".$template.".php";
+    $__t_f = STARTERTHEME_PATH."/templates/blocks/".$t.".php";
     
-    if(file_exists($__template_file)){
+    if(file_exists($__t_f)){
         ob_start();
-        include($__template_file);
-        $html = ob_get_contents();
+        include($__t_f);
+        $h = ob_get_contents();
         ob_end_clean();
         
-        if($return) {
-            return $html;
+        if($r) {
+            return $h;
         }
-        echo $html;
+        echo $h;
     }
 }
 
-function startertheme_render_shortcode($template, $attrs = [], $content = "", $return = true)
+function startertheme_render_shortcode($t, $attrs = [], $content = "", $r = true)
 {
-    $__template_file = STARTERTHEME_PATH."/templates/shortcodes/".$template.".php";
+    $__t_f = STARTERTHEME_PATH."/templates/shortcodes/".$t.".php";
 
-    if(file_exists($__template_file)){
+    if(file_exists($__t_f)){
         ob_start();
-        include($__template_file);
-        $html = ob_get_contents();
+        include($__t_f);
+        $h = ob_get_contents();
         ob_end_clean();
         
-        if($return) {
-            return $html;
+        if($r) {
+            return $h;
         }
-        echo $html;
+        echo $h;
     }
 }
 
