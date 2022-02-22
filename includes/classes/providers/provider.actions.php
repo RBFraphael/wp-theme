@@ -108,17 +108,6 @@ class Provider_Actions
         $fields = new Provider_Fields();
     }
 
-    public function acf_settings_url($url)
-    {
-        return STARTERTHEME_URL."/includes/plugins/advanced-custom-fields/";
-    }
-
-    public function acf_register_block_type_args($args)
-    {
-        $args['name'] = str_replace("acf/", "startertheme/", $args['name']);
-        return $args;
-    }
-
     public function acf_save_post($post_id)
     {
         if($post_id == "options"){
