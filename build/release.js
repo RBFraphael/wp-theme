@@ -35,7 +35,8 @@ const toDelete = [
     ".git*",
     "README*",
     "LICENSE*",
-    ".DS_Store"
+    ".DS_Store",
+    ".purgecssignore"
 ];
 toDelete.forEach((del) => {
     shell.rm("-rf", path.resolve(workingPath, del));

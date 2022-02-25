@@ -29,7 +29,8 @@ gulp.task("css:purge", () => {
                 "./templates/**/*.php",
                 "./includes/classes/**/*.php",
                 "./includes/helpers/**/*.php",
-                "./assets/dist/js/*.js"
+                "./assets/dist/js/*.js",
+                "./.purgecssignore"
             ]
         }))
         .pipe(rename({
@@ -46,7 +47,8 @@ gulp.task("css:watch", (done) => {
         "./templates/**/*.php",
         "./includes/classes/**/*.php",
         "./includes/helpers/**/*.php",
-        "./assets/dist/js/*.js"
+        "./assets/dist/js/*.js",
+        "./.purgecssignore"
     ], gulp.series("css:purge"));
 
     done();
