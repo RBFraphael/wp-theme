@@ -435,9 +435,9 @@ if ( ! class_exists( 'ACF_Admin_Field_Groups' ) ) :
 		public function get_human_readable_file_location( $file ) {
 
 			// Generate friendly file path.
-			$STARTERTHEME_PATH = get_stylesheet_directory();
-			if ( strpos( $file, $STARTERTHEME_PATH ) !== false ) {
-				$rel_file = str_replace( $STARTERTHEME_PATH, '', $file );
+			$theme_path = get_stylesheet_directory();
+			if ( strpos( $file, $theme_path ) !== false ) {
+				$rel_file = str_replace( $theme_path, '', $file );
 				$located  = sprintf( __( 'Located in theme: %s', 'acf' ), $rel_file );
 
 			} elseif ( strpos( $file, WP_PLUGIN_DIR ) !== false ) {

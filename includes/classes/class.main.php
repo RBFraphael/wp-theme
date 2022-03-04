@@ -61,6 +61,9 @@ class StarterTheme
         // Custom filters
         add_filter("desktop_menu_filter", [$custom_filters, "desktop_menu"]);
         add_filter("mobile_menu_filter", [$custom_filters, "mobile_menu"]);
+
+        // Fix for ACF in Wordpress 5.9+
+        add_filter("block_editor_rest_api_preload_paths", [$filters, "block_editor_rest_api_preload_paths"], 10, 1);
     }
 }
 
