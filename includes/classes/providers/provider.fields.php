@@ -59,6 +59,16 @@ class Provider_Fields
         startertheme_register_fields($fields);
     }
 
+    public function all_blocks()
+    {
+        $fields = new FieldsBuilder("all-blocks", ['style' => "seamless"]);
+        $fields
+            ->addTrueFalse("disabled", ['label' => __("Disable block", "starter-theme")])
+            ->setLocation("block", "==", "starter-theme/all");
+
+        startertheme_register_fields($fields);
+    }
+
     public function block_container()
     {
         $fields = new FieldsBuilder("block-container", ['style' => "seamless"]);

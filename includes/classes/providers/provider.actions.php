@@ -42,6 +42,36 @@ class Provider_Actions
         <?php
     }
 
+    public function wp_before_admin_bar_render()
+    {
+        global $wp_admin_bar;
+        $wp_admin_bar->remove_menu("wp-logo");
+    }
+
+    public function wp_dashboard_setup()
+    {
+        $metaboxes = [
+            ["dashboard_activity", "dashboard", "normal"],
+            ["dashboard_site_health", "dashboard", "normal"],
+            ["dashboard_recent_comments", "dashboard", "normal"],
+            ["dashboard_quick_press", "dashboard", "side"],
+            ["dashboard_incoming_links", "dashboard", "normal"],
+            ["dashboard_plugins", "dashboard", "normal"],
+            ["dashboard_primary", "dashboard", "side"],
+            ["dashboard_secondary", "dashboard", "side"],
+            ["dashboard_recent_drafts", "dashboard", "side"],
+            ["dashboard_right_now", "dashboard", "normal"],
+            ["yoast_db_widget", "dashboard", "normal"],
+            ["wpseo-dashboard-overview", "dashboard", "normal"]
+        ];
+
+        foreach($metaboxes as $metabox){
+            remove_meta_box($metabox[0], $metabox[1], $metabox[2]);
+        }
+
+        remove_action( 'welcome_panel', 'wp_welcome_panel' );
+    }
+
     public function after_setup_theme()
     {
         // Set theme textdomain (language) directory

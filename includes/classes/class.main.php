@@ -24,6 +24,8 @@ class StarterTheme
         add_action("wp_footer", [$actions, "wp_footer"]);
         add_action("admin_head", [$actions, "admin_head"]);
         add_action("admin_footer", [$actions, "admin_footer"]);
+        add_action("wp_before_admin_bar_render", [$actions, "wp_before_admin_bar_render"]);
+        add_action("wp_dashboard_setup", [$actions, "wp_dashboard_setup"]);
 
         // Advanced Custom Fields actions
         add_action("acf/init", [$actions, "acf_init"]);

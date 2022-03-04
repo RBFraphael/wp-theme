@@ -112,4 +112,16 @@ class Provider_Filters
 
         return $status;
     }
+
+    public function admin_footer_text($text)
+    {
+        $text = "<span><i>".sprintf(__("Developed by %s.", "fatseg"), '<a href="https://github.com/rbfraphael" target="_blank" rel="noopener noreferrer">RBFraphael</a>')."</i></span>";
+        return $text;
+    }
+
+    public function update_footer($text)
+    {
+        $text = "<span>".sprintf(__("Wordpress %s", "fatseg"), get_bloginfo("version", "display"))."</span>";
+        return $text;
+    }
 }

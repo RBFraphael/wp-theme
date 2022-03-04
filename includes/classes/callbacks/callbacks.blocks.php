@@ -2,8 +2,11 @@
 
 class Callbacks_Blocks
 {
-    public function container()
+    public function container($block)
     {
-        startertheme_render_block("container", get_fields());
+        if(get_field("disabled") && !is_admin()) return;
+
+        $data = array_merge(get_fields(), compact('block'));
+        startertheme_render_block("container", $data);
     }
 }
