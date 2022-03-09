@@ -115,13 +115,13 @@ class Provider_Filters
 
     public function admin_footer_text($text)
     {
-        $text = "<span><i>".sprintf(__("Developed by %s.", "fatseg"), '<a href="https://github.com/rbfraphael" target="_blank" rel="noopener noreferrer">RBFraphael</a>')."</i></span>";
+        $text = "<span><i>".sprintf(__("Developed by %s.", "starter-theme"), '<a href="https://github.com/rbfraphael" target="_blank" rel="noopener noreferrer">RBFraphael</a>')."</i></span>";
         return $text;
     }
 
     public function update_footer($text)
     {
-        $text = "<span>".sprintf(__("Wordpress %s", "fatseg"), get_bloginfo("version", "display"))."</span>";
+        $text = "<span>".sprintf(__("Wordpress %s", "starter-theme"), get_bloginfo("version", "display"))."</span>";
         return $text;
     }
 

@@ -52,6 +52,8 @@ class StarterTheme
         add_filter("block_categories_all", [$filters, "block_categories_all"], 1, 2);
         add_filter("login_enqueue_scripts", [$filters, "login_enqueue_scripts"]);
         add_filter("use_block_editor_for_post_type", [$filters, "use_block_editor_for_post_type"], 10, 2);
+        add_filter("admin_footer_text", [$filters, "admin_footer_text"], 10, 1);
+        add_filter("update_footer", [$filters, "update_footer"], PHP_INT_MAX, 1);
 
         // Advanced Custom Fields filters
         add_filter("acf/settings/url", [$filters, "acf_settings_url"]);
