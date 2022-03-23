@@ -66,7 +66,7 @@ class Provider_Fields
 
     public function example_metabox()
     {
-        $fields = new FieldsBuilder("additional-code", ['position' => "side", 'title' => __("Example metabox", "starter-theme")]);
+        $fields = new FieldsBuilder("example-metabox", ['position' => "side", 'title' => __("Example metabox", "starter-theme")]);
         $fields
             ->addMessage("msg", __("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "starter-theme"))
             ->addText("example_text", ['label' => __("Example text", "starter-theme")])
