@@ -4,6 +4,11 @@ use \StoutLogic\AcfBuilder\FieldsBuilder;
 
 class Provider_Fields
 {
+    public function autoload()
+    {
+        $this->example_metabox();
+    }
+
     public function general_options()
     {
         $fields = new FieldsBuilder("general-options", ['style' => "seamless"]);
@@ -55,6 +60,18 @@ class Provider_Fields
             ->addTextarea("body_open", ['label' => __("After opening &lt;body&gt;", "starter-theme")])
             ->addTextarea("body_close", ['label' => __("Before closing &lt;/body&gt;", "starter-theme")])
             ->setLocation("options_page", "==", "theme-options-additional-code");
+        
+        startertheme_register_fields($fields);
+    }
+
+    public function example_metabox()
+    {
+        $fields = new FieldsBuilder("additional-code", ['position' => "side", 'title' => __("Example metabox", "starter-theme")]);
+        $fields
+            ->addMessage("msg", __("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "starter-theme"))
+            ->addText("example_text", ['label' => __("Example text", "starter-theme")])
+            ->addTrueFalse("example_checkbox", ['label' => __("Example checkbox", "starter-theme")])
+            ->setLocation("post_type", "==", "post");
         
         startertheme_register_fields($fields);
     }

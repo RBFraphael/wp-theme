@@ -135,7 +135,7 @@ class Provider_Actions
         $blocks = new Provider_Blocks();
 
         // Register ACF fields
-        $fields = new Provider_Fields();
+        $fields = (new Provider_Fields())->autoload();
     }
 
     public function acf_save_post($post_id)
