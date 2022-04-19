@@ -1,11 +1,11 @@
 <?php
 /*
-Plugin Name: OpenPRO For ACF
+Plugin Name: Pro Features for ACF
 Plugin URI: https://github.com/rbfraphael/pro-features-for-acf
-Description: OpenPRO brings the power of Advanced Custom Fields Pro to free version. You must have Advanced Custom Fields (free) installed and active to enjoy this plugin.
-Version: 5.11.4
+Description: Bring the power of Advanced Custom Fields Pro to free version. You must have Advanced Custom Fields (free) installed and active to enjoy this plugin.
+Version: 5.12.2
 Author: RBFraphael
-Author URI: https://github.com/rbfraphael
+Author URI: https://github.com/rbfraphael/pro-features-for-acf
 */
 
 if(!defined('ABSPATH')) exit;
@@ -16,12 +16,12 @@ if(!class_exists("FreeAcfProFeatures")){
 
         function __construct()
         {
-            $base_url = plugin_dir_url(__FILE__);
-            $base_path = plugin_dir_path(__FILE__);
+            $base_url = STARTERTHEME_URL."/includes/plugins/pro-features-for-acf/";
+            $base_path = dirname(__FILE__);
 
             define("PFFA_URL", $base_url);
             define("PFFA_PATH", $base_path);
-            define("PFFA_VERSION", "5.11.4");
+            define("PFFA_VERSION", "5.12.2");
 
             $this->plugin_init();
             $this->plugin_actions();
