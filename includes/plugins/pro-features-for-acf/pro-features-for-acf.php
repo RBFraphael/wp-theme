@@ -17,7 +17,7 @@ if(!class_exists("FreeAcfProFeatures")){
         function __construct()
         {
             $base_url = STARTERTHEME_URL."/includes/plugins/pro-features-for-acf/";
-            $base_path = dirname(__FILE__);
+            $base_path = STARTERTHEME_PATH."/includes/plugins/pro-features-for-acf/";
 
             define("PFFA_URL", $base_url);
             define("PFFA_PATH", $base_path);

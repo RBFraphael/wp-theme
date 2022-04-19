@@ -517,12 +517,12 @@ function acf_enqueue_block_assets() {
 	$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
 	if ( acf_version_compare( 'wp', '<', '5.6' ) ) {
-		$blocks_js_path = acf_get_url( "assets/build/js/pro/acf-pro-blocks-legacy{$min}.js" );
+		$blocks_js_path = PFFA_URL."/resources/assets/build/js/pro/acf-pro-blocks-legacy{$min}.js";
 	} else {
-		$blocks_js_path = acf_get_url( "assets/build/js/pro/acf-pro-blocks{$min}.js" );
+		$blocks_js_path = PFFA_URL."/resources/assets/build/js/pro/acf-pro-blocks{$min}.js";
 	}
 
-	wp_enqueue_script( 'acf-blocks', $blocks_js_path, array( 'acf-input', 'wp-blocks' ), ACF_VERSION, true );
+	wp_enqueue_script( 'acf-blocks', $blocks_js_path, array( 'acf-input', 'wp-blocks' ), PFFA_VERSION, true );
 
 	// Enqueue block assets.
 	array_map( 'acf_enqueue_block_type_assets', $block_types );
