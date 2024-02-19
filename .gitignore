@@ -1,8 +1,9 @@
-# I recommend you to comment the next lines when your theme is ready to deploy
-/vendor/
-/assets/dist/
-
-/node_modules/
+.parcel-cache/
+node_modules/
+vendor/
 package-lock.json
 composer.lock
-!/lang
+public/css/*
+!public/css/.gitkeep
+public/js/*
+!public/js/.gitkeep

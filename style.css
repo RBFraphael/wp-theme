@@ -1,14 +1,15 @@
 /*
-Theme Name: Starter Theme
-Theme URI: https://github.com/rbfraphael/starter-theme
+Theme Name: WP Starter Theme
+Theme URI: https://github.com/rbfraphael/wp-starter-theme
 Author: RBFraphael
-Author URI: https://github.com/rbfraphael
-Description: An easy to use and easy to understand Wordpress starter theme
+Author URI: https://rbfraphael.github.io
+Description: A developer-first Wordpress theme boilerplate.
+Tags: wordpress, theme, blog, website
 Version: 1.0.0
-Requires at least: 5.8
-Tested up to: 5.8
-Requires PHP: 7.2
+Requires at least: 5.2
+Tested up to: 6.2
+Requires PHP: 8.0
 License: MIT
-License URI: https://opensource.org/licenses/MIT
-Text Domain: starter-theme
+License URI: https://opensource.org/license/mit/
+Text Domain: wptheme
 */
