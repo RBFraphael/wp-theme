@@ -10,6 +10,7 @@ class Core
     {
         add_action("init", "WpTheme\Core\Core::InitEloquent");
         add_action("after_setup_theme", "WpTheme\Core\Core::BootCarbonFields");
+        add_action("after_switch_theme", "WpTheme\Core\Core::InitMigrations");
 
         static::RemapTemplates();
 
@@ -24,6 +25,12 @@ class Core
     {
         define("Carbon_Fields\URL", get_template_directory_uri()."/vendor/htmlburger/carbon-fields/");
         Carbon_Fields::boot();
+    }
+
+    static function InitMigrations()
+    {
+        $wrapper = new PhinxWrapper();
+        $wrapper->migrate();
     }
 
     static function InitEloquent()
