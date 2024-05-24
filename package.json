@@ -25,6 +25,7 @@
   "homepage": "https://github.com/rbfraphael/wp-starter-theme#readme",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.5.1",
+    "@studio-freight/lenis": "^1.0.42",
     "aos": "^2.3.4",
     "axios": "^1.6.7",
     "bootstrap": "^5.3.2",
